@@ -2,13 +2,9 @@
   "name": "tag-checker",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
     "test": "jest --watchAll --verbose --coverage"
   },
   "devDependencies": {
-    "vite": "^2.5.4",
     "@types/jest": "^27.0.1"
   },
   "dependencies": {
