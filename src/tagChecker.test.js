@@ -15,12 +15,17 @@ describe('Tag checker', () => {
         });
     });
 
-    it('Expected different tags', () => {
+    it('Expected all different tags', () => {
         expect(
             check("<B><C> This should be centred and in boldface, but the tags are wrongly nested </B></C>")
         ).toBe("Expected </C> found </B>");
     });
 
-    it.todo('Expected # found </C>');
+    it('Expected # found </C>', () => {
+        expect(
+            check("<B>This should be in boldface, but there is an extra closing tag</B></C>")
+        ).toBe("Expected # found </C>");
+    });
+
     it.todo('Expected </B> found #');
 });

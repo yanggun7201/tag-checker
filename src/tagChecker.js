@@ -52,6 +52,10 @@ const check = (sentence = '') => {
     matchTags.some(matchedTag => {
         if (isEndTag(matchedTag)) {
             let tagItem = tagStack.pop();
+            if (!tagItem) {
+                tagItem = new TagItem();
+            }
+
             tagItem.closeTag = matchedTag;
 
             if (!isValid(tagItem)) {
