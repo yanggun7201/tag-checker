@@ -73,11 +73,11 @@ const check = (sentence = '') => {
         return result;
     }
 
-    if (tagStack.length === 0) {
-        return SUCCESS_MESSAGE;
+    if (tagStack.length > 0) {
+        return getStatus(tagStack.pop());
     }
 
-    return "error1";
+    return SUCCESS_MESSAGE;
 }
 
 const isEndTag = (tag = "") => {
@@ -85,13 +85,15 @@ const isEndTag = (tag = "") => {
 }
 
 const getStatus = (tagItem) => {
+    if (!tagItem.closeTag) {
+        return `Expected ${tagItem.expectedCloseTag} found #`;
+    }
 
-    if (!isValid(tagItem)) {
+    if (!tagItem.openTag || !isValid(tagItem)) {
         return `Expected ${tagItem.expectedCloseTag} found ${tagItem.closeTag}`;
     }
 
-    // TODO
-    return "error2";
+    return SUCCESS_MESSAGE;
 }
 
 const isValid = (tagItem) => {

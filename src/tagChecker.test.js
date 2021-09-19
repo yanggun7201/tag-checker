@@ -27,5 +27,9 @@ describe('Tag checker', () => {
         ).toBe("Expected # found </C>");
     });
 
-    it.todo('Expected </B> found #');
+    it('Expected </B> found #',() => {
+        expect(
+            check("<B><C>This should be centred and in boldface, but there is a missing closing tag</C>")
+        ).toBe("Expected </B> found #");
+    });
 });
