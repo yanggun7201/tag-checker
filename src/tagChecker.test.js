@@ -38,4 +38,10 @@ describe('Tag checker', () => {
             check("</B></C>This should be centred and in boldface, but there is a missing closing tag</D>")
         ).toBe("Expected # found </B>");
     });
+
+    it('All start tags',() => {
+        expect(
+            check("<B><C>This should be centred and in boldface, but there is a missing closing tag<D>")
+        ).toBe("Expected </B> found #");
+    });
 });

@@ -36,7 +36,7 @@ const check = (sentence = '') => {
     }
 
     if (tagStack.length > 0) {
-        return getStatus(tagStack.pop());
+        return getStatus(tagStack[0]); // first error tag item
     }
 
     return SUCCESS_MESSAGE;
