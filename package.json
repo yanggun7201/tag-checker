@@ -4,9 +4,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "jest --watchAll --verbose --coverage"
   },
   "devDependencies": {
-    "vite": "^2.5.4"
+    "vite": "^2.5.4",
+    "@types/jest": "^27.0.1"
+  },
+  "dependencies": {
+    "jest": "^27.2.0"
   }
 }
