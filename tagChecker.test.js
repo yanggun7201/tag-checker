@@ -15,7 +15,12 @@ describe('Tag checker', () => {
         });
     });
 
-    it.todo('Expected different tags');
+    it('Expected different tags', () => {
+        expect(
+            check("<B><C> This should be centred and in boldface, but the tags are wrongly nested </B></C>")
+        ).toBe("Expected </C> found </B>");
+    });
+
     it.todo('Expected # found </C>');
     it.todo('Expected </B> found #');
 });
